@@ -5,9 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "sass --watch scss:css",
-    "build": "sass scss:css"
+    "copy:files": "copyfiles index.html dist/ && copyfiles css/styles.css dist/css/",
+    "build": "sass scss:css && npm run copy:files"
   },
   "dependencies": {
+    "copyfiles": "^2.4.1",
     "sass": "^1.35.1"
   }
 }

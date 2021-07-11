@@ -1,0 +1,339 @@
+$body-color: #e1eddc;
+
+$yello-dark: #fff264;
+$green-dark: #c4bf73;
+
+$yello-lite: #faf4a7;
+$green-lite: #c6c59d;
+
+$outer-wheel: #c1a3a1;
+
+$inner-wheel1: #f16a83;
+$inner-wheel2: #c06670;
+
+body {
+  background-color: $body-color;
+  > div {
+    margin: 100px;
+  }
+}
+
+div.ferris {
+  position: relative;
+  div.lgWheel {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    z-index: 25;
+    border-radius: 50%;
+    border: 2px solid $outer-wheel;
+    animation: lgWheelRotate 10s linear infinite;
+
+    .bar {
+      z-index: 10;
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: calc(100% + 3px);
+      height: 2px;
+      background-color: $outer-wheel;
+      &.one {
+        transform: rotate(36deg);
+      }
+      &.two {
+        transform: rotate(72deg);
+      }
+      &.three {
+        transform: rotate(108deg);
+      }
+      &.four {
+        transform: rotate(144deg);
+      }
+    }
+    .cart {
+      display: inline-block;
+      position: absolute;
+      z-index: 30;
+      padding-top: 49px;
+      transform-origin: top;
+      animation: cartBalancer 10s linear infinite;
+      transform-box: fill-box;
+
+      .handle {
+        z-index: -1;
+        width: 88px;
+        height: 86px;
+        position: absolute;
+        top: 0;
+        border-radius: 50%;
+        &.left {
+          border: 8px solid $yello-dark;
+          border-right: 8px solid transparent;
+          border-left: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          transform: rotate(-42deg);
+        }
+        &.right {
+          border: 8px solid $green-dark;
+          border-right: 8px solid transparent;
+          border-left: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          transform: rotate(42deg);
+        }
+      }
+      .leftContainer {
+        display: inline-block;
+        border-top: 50px solid $yello-dark;
+        border-right: 30px solid $yello-dark;
+        border-left: 22px solid transparent;
+      }
+      .rightContainer {
+        margin-left: -4px;
+        display: inline-block;
+        border-top: 50px solid $green-dark;
+        border-left: 30px solid $green-dark;
+        border-right: 22px solid transparent;
+      }
+      &.one {
+        left: 124px;
+        top: 12px;
+        // animation-delay: 5s;
+      }
+      &.two {
+        left: 280px;
+        top: 13px;
+      }
+      &.three {
+        right: -6px;
+        top: 102px;
+      }
+      &.four {
+        right: -54px;
+        top: 249px;
+      }
+      &.five {
+        right: -7px;
+        top: 397px;
+      }
+      &.six {
+        left: 279px;
+        top: 489px;
+      }
+      &.seven {
+        left: 123px;
+        top: 489px;
+      }
+      &.eight {
+        left: 0px;
+        top: 400px;
+      }
+      &.nine {
+        left: -49px;
+        top: 253px;
+      }
+      &.ten {
+        left: -3px;
+        top: 105px;
+      }
+    }
+  }
+
+  @keyframes lgWheelRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes cartBalancer {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-180deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  div.center2 {
+    position: absolute;
+    top: 182px;
+    left: 182px;
+    height: 70px;
+    width: 70px;
+    transform: rotate(-45deg);
+    z-index: 9;
+    border-radius: 50%;
+    border-left: 35px solid $yello-lite;
+    border-top: 35px solid $yello-lite;
+    border-right: 35px solid $green-lite;
+    border-bottom: 35px solid $green-lite;
+  }
+  div.center1 {
+    z-index: 11;
+    position: absolute;
+    top: 217px;
+    left: 217px;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    border-left: 35px solid $inner-wheel1;
+    border-top: 35px solid $inner-wheel1;
+    border-right: 35px solid $inner-wheel2;
+    border-bottom: 35px solid $inner-wheel2;
+  }
+  div.smWheelContainer {
+    display: inline-block;
+    position: absolute;
+    top: 67px;
+    left: 67px;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    height: 300px;
+    width: 300px;
+    z-index: 3;
+    border-left: 35px solid $inner-wheel1;
+    border-top: 35px solid $inner-wheel1;
+    border-right: 35px solid $inner-wheel2;
+    border-bottom: 35px solid $inner-wheel2;
+  }
+  div.smallWheel {
+    display: inline-block;
+    position: absolute;
+    top: 102px;
+    left: 102px;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    height: 300px;
+    width: 300px;
+    z-index: 2;
+    animation: smallWheelRotate 3s linear infinite;
+    .sm-bar {
+      bottom: 40%;
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: $inner-wheel1;
+      z-index: 1;
+      &.farword {
+        &.one {
+          transform: translate(0px, -30px) rotate(0deg);
+        }
+        &.two {
+          transform: translate(0px, -30px) rotate(18deg);
+        }
+        &.three {
+          transform: translate(0px, -30px) rotate(36deg);
+        }
+        &.four {
+          transform: translate(0px, -30px) rotate(54deg);
+        }
+        &.five {
+          transform: translate(0px, -30px) rotate(72deg);
+        }
+        &.six {
+          transform: translate(0px, -30px) rotate(90deg);
+        }
+        &.seven {
+          transform: translate(0px, -30px) rotate(108deg);
+        }
+        &.eight {
+          transform: translate(0px, -30px) rotate(126deg);
+        }
+        &.nine {
+          transform: translate(0px, -30px) rotate(144deg);
+        }
+        &.ten {
+          transform: translate(0px, -30px) rotate(162deg);
+        }
+      }
+      &.backword {
+        &.extra {
+          transform: translate(-29px, -67px) rotate(144deg);
+        }
+        &.zero {
+          transform: translate(-21px, -73px) rotate(162deg);
+        }
+        &.one {
+          transform: translate(9px, 16px) rotate(162deg);
+        }
+        &.two {
+          transform: translate(22px, 12px) rotate(144deg);
+        }
+        &.three {
+          transform: translate(-39px, -57px) rotate(126deg);
+        }
+        &.four {
+          transform: translate(-43px, -51px) rotate(108deg);
+        }
+        &.five {
+          transform: translate(-47px, -37px) rotate(90deg);
+        }
+        &.six {
+          transform: translate(-46px, -18px) rotate(72deg);
+        }
+        &.seven {
+          transform: translate(-41px, -6px) rotate(54deg);
+        }
+        &.eight {
+          transform: translate(-33px, 4px) rotate(36deg);
+        }
+        &.nine {
+          transform: translate(-19px, 13px) rotate(18deg);
+        }
+        &.ten {
+          transform: translate(-6px, 17px) rotate(0deg);
+        }
+      }
+    }
+  }
+
+  @keyframes smallWheelRotate {
+    0% {
+      transform: rotate(315deg);
+    }
+    100% {
+      transform: rotate(-45deg);
+    }
+  }
+  div.rightStand {
+    position: absolute;
+    display: inline-block;
+    border-top: 400px solid #c6c59d;
+    border-right: 25px solid #c6c59d;
+    border-left: 22px solid transparent;
+    transform: rotate(165deg);
+    top: 264px;
+    left: 305px;
+  }
+  div.leftStand {
+    position: absolute;
+    display: inline-block;
+    border-top: 400px solid $yello-lite;
+    border-left: 25px solid $yello-lite;
+    border-right: 22px solid transparent;
+    transform: rotate(195deg);
+    top: 264px;
+    left: 155px;
+  }
+  div.base1 {
+    position: absolute;
+    top: 650px;
+    left: 25px;
+    height: 25px;
+    width: 450px;
+    background-color: $inner-wheel1;
+    border-radius: 15px;
+  }
+  div.base2 {
+    position: absolute;
+    top: 675px;
+    left: 0px;
+    height: 30px;
+    width: 500px;
+    background-color: $inner-wheel2;
+    border-radius: 16px;
+  }
+}

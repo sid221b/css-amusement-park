@@ -1,0 +1,318 @@
+body {
+  background-color: #e1eddc;
+}
+body > div {
+  margin: 100px;
+}
+
+div.ferris {
+  position: relative;
+}
+div.ferris div.lgWheel {
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  z-index: 25;
+  border-radius: 50%;
+  border: 2px solid #c1a3a1;
+  animation: lgWheelRotate 10s linear infinite;
+}
+div.ferris div.lgWheel .bar {
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: calc(100% + 3px);
+  height: 2px;
+  background-color: #c1a3a1;
+}
+div.ferris div.lgWheel .bar.one {
+  transform: rotate(36deg);
+}
+div.ferris div.lgWheel .bar.two {
+  transform: rotate(72deg);
+}
+div.ferris div.lgWheel .bar.three {
+  transform: rotate(108deg);
+}
+div.ferris div.lgWheel .bar.four {
+  transform: rotate(144deg);
+}
+div.ferris div.lgWheel .cart {
+  display: inline-block;
+  position: absolute;
+  z-index: 30;
+  padding-top: 49px;
+  transform-origin: top;
+  animation: cartBalancer 10s linear infinite;
+  transform-box: fill-box;
+}
+div.ferris div.lgWheel .cart .handle {
+  z-index: -1;
+  width: 88px;
+  height: 86px;
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+}
+div.ferris div.lgWheel .cart .handle.left {
+  border: 8px solid #fff264;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  transform: rotate(-42deg);
+}
+div.ferris div.lgWheel .cart .handle.right {
+  border: 8px solid #c4bf73;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  transform: rotate(42deg);
+}
+div.ferris div.lgWheel .cart .leftContainer {
+  display: inline-block;
+  border-top: 50px solid #fff264;
+  border-right: 30px solid #fff264;
+  border-left: 22px solid transparent;
+}
+div.ferris div.lgWheel .cart .rightContainer {
+  margin-left: -4px;
+  display: inline-block;
+  border-top: 50px solid #c4bf73;
+  border-left: 30px solid #c4bf73;
+  border-right: 22px solid transparent;
+}
+div.ferris div.lgWheel .cart.one {
+  left: 124px;
+  top: 12px;
+}
+div.ferris div.lgWheel .cart.two {
+  left: 280px;
+  top: 13px;
+}
+div.ferris div.lgWheel .cart.three {
+  right: -6px;
+  top: 102px;
+}
+div.ferris div.lgWheel .cart.four {
+  right: -54px;
+  top: 249px;
+}
+div.ferris div.lgWheel .cart.five {
+  right: -7px;
+  top: 397px;
+}
+div.ferris div.lgWheel .cart.six {
+  left: 279px;
+  top: 489px;
+}
+div.ferris div.lgWheel .cart.seven {
+  left: 123px;
+  top: 489px;
+}
+div.ferris div.lgWheel .cart.eight {
+  left: 0px;
+  top: 400px;
+}
+div.ferris div.lgWheel .cart.nine {
+  left: -49px;
+  top: 253px;
+}
+div.ferris div.lgWheel .cart.ten {
+  left: -3px;
+  top: 105px;
+}
+@keyframes lgWheelRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes cartBalancer {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+div.ferris div.center2 {
+  position: absolute;
+  top: 182px;
+  left: 182px;
+  height: 70px;
+  width: 70px;
+  transform: rotate(-45deg);
+  z-index: 9;
+  border-radius: 50%;
+  border-left: 35px solid #faf4a7;
+  border-top: 35px solid #faf4a7;
+  border-right: 35px solid #c6c59d;
+  border-bottom: 35px solid #c6c59d;
+}
+div.ferris div.center1 {
+  z-index: 11;
+  position: absolute;
+  top: 217px;
+  left: 217px;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  border-left: 35px solid #f16a83;
+  border-top: 35px solid #f16a83;
+  border-right: 35px solid #c06670;
+  border-bottom: 35px solid #c06670;
+}
+div.ferris div.smWheelContainer {
+  display: inline-block;
+  position: absolute;
+  top: 67px;
+  left: 67px;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  height: 300px;
+  width: 300px;
+  z-index: 3;
+  border-left: 35px solid #f16a83;
+  border-top: 35px solid #f16a83;
+  border-right: 35px solid #c06670;
+  border-bottom: 35px solid #c06670;
+}
+div.ferris div.smallWheel {
+  display: inline-block;
+  position: absolute;
+  top: 102px;
+  left: 102px;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  height: 300px;
+  width: 300px;
+  z-index: 2;
+  animation: smallWheelRotate 3s linear infinite;
+}
+div.ferris div.smallWheel .sm-bar {
+  bottom: 40%;
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #f16a83;
+  z-index: 1;
+}
+div.ferris div.smallWheel .sm-bar.farword.one {
+  transform: translate(0px, -30px) rotate(0deg);
+}
+div.ferris div.smallWheel .sm-bar.farword.two {
+  transform: translate(0px, -30px) rotate(18deg);
+}
+div.ferris div.smallWheel .sm-bar.farword.three {
+  transform: translate(0px, -30px) rotate(36deg);
+}
+div.ferris div.smallWheel .sm-bar.farword.four {
+  transform: translate(0px, -30px) rotate(54deg);
+}
+div.ferris div.smallWheel .sm-bar.farword.five {
+  transform: translate(0px, -30px) rotate(72deg);
+}
+div.ferris div.smallWheel .sm-bar.farword.six {
+  transform: translate(0px, -30px) rotate(90deg);
+}
+div.ferris div.smallWheel .sm-bar.farword.seven {
+  transform: translate(0px, -30px) rotate(108deg);
+}
+div.ferris div.smallWheel .sm-bar.farword.eight {
+  transform: translate(0px, -30px) rotate(126deg);
+}
+div.ferris div.smallWheel .sm-bar.farword.nine {
+  transform: translate(0px, -30px) rotate(144deg);
+}
+div.ferris div.smallWheel .sm-bar.farword.ten {
+  transform: translate(0px, -30px) rotate(162deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.extra {
+  transform: translate(-29px, -67px) rotate(144deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.zero {
+  transform: translate(-21px, -73px) rotate(162deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.one {
+  transform: translate(9px, 16px) rotate(162deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.two {
+  transform: translate(22px, 12px) rotate(144deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.three {
+  transform: translate(-39px, -57px) rotate(126deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.four {
+  transform: translate(-43px, -51px) rotate(108deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.five {
+  transform: translate(-47px, -37px) rotate(90deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.six {
+  transform: translate(-46px, -18px) rotate(72deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.seven {
+  transform: translate(-41px, -6px) rotate(54deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.eight {
+  transform: translate(-33px, 4px) rotate(36deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.nine {
+  transform: translate(-19px, 13px) rotate(18deg);
+}
+div.ferris div.smallWheel .sm-bar.backword.ten {
+  transform: translate(-6px, 17px) rotate(0deg);
+}
+@keyframes smallWheelRotate {
+  0% {
+    transform: rotate(315deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+div.ferris div.rightStand {
+  position: absolute;
+  display: inline-block;
+  border-top: 400px solid #c6c59d;
+  border-right: 25px solid #c6c59d;
+  border-left: 22px solid transparent;
+  transform: rotate(165deg);
+  top: 264px;
+  left: 305px;
+}
+div.ferris div.leftStand {
+  position: absolute;
+  display: inline-block;
+  border-top: 400px solid #faf4a7;
+  border-left: 25px solid #faf4a7;
+  border-right: 22px solid transparent;
+  transform: rotate(195deg);
+  top: 264px;
+  left: 155px;
+}
+div.ferris div.base1 {
+  position: absolute;
+  top: 650px;
+  left: 25px;
+  height: 25px;
+  width: 450px;
+  background-color: #f16a83;
+  border-radius: 15px;
+}
+div.ferris div.base2 {
+  position: absolute;
+  top: 675px;
+  left: 0px;
+  height: 30px;
+  width: 500px;
+  background-color: #c06670;
+  border-radius: 16px;
+}
+
+/*# sourceMappingURL=styles.css.map */

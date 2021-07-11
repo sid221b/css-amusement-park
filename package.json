@@ -1,0 +1,13 @@
+{
+  "name": "css-park",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "sass --watch scss:css",
+    "build": "sass scss:css"
+  },
+  "dependencies": {
+    "sass": "^1.35.1"
+  }
+}

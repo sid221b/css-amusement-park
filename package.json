@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "sass --watch scss:css",
-    "copy:files": "copyfiles index.html docs/ && copyfiles css/styles.css docs/css/",
+    "copy:files": "copyfiles index.html docs/ && copyfiles css/styles.css docs/",
     "build": "sass scss:css && npm run copy:files"
   },
   "dependencies": {

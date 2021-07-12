@@ -156,7 +156,7 @@ div.ferris div.center2 {
   border-bottom: 35px solid #c6c59d;
 }
 div.ferris div.center1 {
-  z-index: 11;
+  z-index: 31;
   position: absolute;
   top: 217px;
   left: 217px;
